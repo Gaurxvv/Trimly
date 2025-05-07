@@ -118,7 +118,7 @@ export function CreateLink() {
         />
         {errors.longUrl && <Error message={errors.longUrl} />}
         <div className="flex items-center gap-2">
-          <Card className="p-2 bg-[#41414b] w-full h-10 flex items-center justify-center">trimrr.in</Card> /
+          <Card className="p-2 bg-[#41414b] w-full h-10 flex items-center justify-center">trimmly.vercel.app</Card> /
           <Input
             id="customUrl"
             placeholder="Custom Link (optional)"

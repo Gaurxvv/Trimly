@@ -74,17 +74,17 @@ const LinkPage = () => {
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 flex-wrap">
                 <span className="font-semibold text-base sm:text-lg">Short URL:</span>
                 <a
-                  href={`https://trimrr.in/${link}`}
+                  href={`https://trimmly.vercel.app/${link}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-500 hover:underline break-all text-sm sm:text-base"
                 >
-                  https://trimrr.in/{link}
+                  https://trimmly.vercel.app/{link}
                 </a>
                 <Button
                   variant="ghost"
                   size="icon"
-                  onClick={() => navigator.clipboard.writeText(`https://trimrr.in/${link}`)}
+                  onClick={() => navigator.clipboard.writeText(`https://trimmly.vercel.app/${link}`)}
                   className="w-full sm:w-auto"
                 >
                   <Copy className="h-4 w-4" />
