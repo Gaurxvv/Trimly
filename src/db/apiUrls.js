@@ -37,9 +37,13 @@ export async function getLongUrl(id) {
     .or(`short_url.eq.${id},custom_url.eq.${id}`)
     .single();
 
-  if (shortLinkError && shortLinkError.code !== "PGRST116") {
+  if (shortLinkError) {
     console.error("Error fetching short link:", shortLinkError);
-    return;
+    throw new Error("Short URL not found");
+  }
+
+  if (!shortLinkData) {
+    throw new Error("Short URL not found");
   }
 
   return shortLinkData;

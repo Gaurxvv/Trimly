@@ -7,7 +7,7 @@ import { BarLoader } from "react-spinners";
 
 const RedirectLink = () => {
   const { id } = useParams();
-  const { loading, data, fn } = useFetch(getLongUrl, id);
+  const { loading, data, error, fn } = useFetch(getLongUrl, id);
 
   useEffect(() => {
     fn();
@@ -36,7 +36,15 @@ const RedirectLink = () => {
     );
   }
 
-  // Optionally, you can return null or a fallback UI
+  if (error) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-[#18181b]">
+        <span className="text-red-500 text-lg">Error: {error.message}</span>
+        <span className="text-white mt-2">The short URL you're looking for doesn't exist.</span>
+      </div>
+    );
+  }
+
   return null;
 };
 
